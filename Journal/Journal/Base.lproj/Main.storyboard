@@ -1,15 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9Mx-rf-1xu">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Bullet Journal-->
+        <scene sceneID="i3y-ra-ltM">
+            <objects>
+                <tableViewController id="WbH-Pd-vdr" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="70" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="6kc-Ne-tyn">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="APc-om-cpD" customClass="JournalTableViewCell" customModule="Journal" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="70"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="APc-om-cpD" id="bnZ-kZ-tdS">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="69.5"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lNO-aj-jAA">
+                                            <rect key="frame" x="20" y="34.5" width="67" height="30"/>
+                                            <state key="normal" title="Complete"/>
+                                            <connections>
+                                                <action selector="complete:" destination="APc-om-cpD" eventType="touchUpInside" id="0TY-hf-WbF"/>
+                                            </connections>
+                                        </button>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task to do" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sP4-Ms-ZyK">
+                                            <rect key="frame" x="20" y="10" width="79" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <nil key="textColor"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
+                                        <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aCj-DU-uBh">
+                                            <rect key="frame" x="310" y="34.5" width="45" height="30"/>
+                                            <state key="normal" title="Delete">
+                                                <color key="titleColor" red="1" green="0.14913141730000001" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            </state>
+                                            <connections>
+                                                <action selector="delete:" destination="APc-om-cpD" eventType="touchUpInside" id="LSE-wf-Bqo"/>
+                                            </connections>
+                                        </button>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstAttribute="bottom" secondItem="aCj-DU-uBh" secondAttribute="bottom" constant="5" id="Dyw-Ds-6IT"/>
+                                        <constraint firstItem="sP4-Ms-ZyK" firstAttribute="top" secondItem="bnZ-kZ-tdS" secondAttribute="top" constant="10" id="HOQ-wN-eMA"/>
+                                        <constraint firstItem="sP4-Ms-ZyK" firstAttribute="leading" secondItem="bnZ-kZ-tdS" secondAttribute="leading" constant="20" id="PST-zc-rBS"/>
+                                        <constraint firstAttribute="trailing" secondItem="aCj-DU-uBh" secondAttribute="trailing" constant="20" id="PzF-5F-FM4"/>
+                                        <constraint firstItem="sP4-Ms-ZyK" firstAttribute="top" secondItem="bnZ-kZ-tdS" secondAttribute="top" constant="10" id="f71-Rx-J0Y"/>
+                                        <constraint firstAttribute="bottom" secondItem="lNO-aj-jAA" secondAttribute="bottom" constant="5" id="fvW-Bb-K6r"/>
+                                        <constraint firstItem="sP4-Ms-ZyK" firstAttribute="leading" secondItem="bnZ-kZ-tdS" secondAttribute="leading" constant="20" id="i7o-6X-SS8"/>
+                                        <constraint firstItem="lNO-aj-jAA" firstAttribute="leading" secondItem="bnZ-kZ-tdS" secondAttribute="leading" constant="20" id="xxq-RZ-iQa"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="TaskToDo" destination="sP4-Ms-ZyK" id="BiP-uq-5UI"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="WbH-Pd-vdr" id="CGq-L4-M1k"/>
+                            <outlet property="delegate" destination="WbH-Pd-vdr" id="NSO-DV-You"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Bullet Journal" id="I1S-F1-hcl">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="99p-gd-KX4">
+                            <connections>
+                                <action selector="addNewTask:" destination="rWh-n2-gKU" id="8i5-QF-EFh"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Mkv-Nf-ZXW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <exit id="rWh-n2-gKU" userLabel="Exit" sceneMemberID="exit"/>
+            </objects>
+            <point key="canvasLocation" x="390" y="134"/>
+        </scene>
+        <!--Journal Table View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="JournalTableViewController" customModule="Journal" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -19,6 +96,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1076" y="133.5832083958021"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="6ii-CN-znq">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Mx-rf-1xu" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="dPx-eE-NU2">
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="WbH-Pd-vdr" kind="relationship" relationship="rootViewController" id="FVK-ZJ-Syx"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="38z-lh-Ka1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-298" y="134"/>
         </scene>
     </scenes>
 </document>

@@ -25,7 +25,7 @@ struct Task : Codable {
     
     mutating func markComplete () {
         self.completed = true
-        DataManager.delete(id.uuidString)
+        DataManager.save(self, id.uuidString)
     }
     
     

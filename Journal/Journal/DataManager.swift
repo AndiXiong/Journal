@@ -57,17 +57,21 @@ public class DataManager {
     
     
     //load all files from a directory
-    static func loadAllFiles <T:Decodable> (type: T.Type) -> [T] {
-        do{
-            let files:[String] = try FileManager.default.contentsOfDirectory(atPath: getDocDirectory().path)
-            var objects : [T]
-            for fileName in files {
-                objects.append(load(fileName , type: type))
-            }
-            return objects
+    static func loadAll <T:Decodable> (_ type:T.Type) -> [T] {
+        do {
+            let files = try FileManager.default.contentsOfDirectory(atPath: getDocDirectory().path)
             
-        } catch {
-            fatalError("Unable to load any files")
+            var modelObjects = [T]()
+            
+            for fileName in files {
+                modelObjects.append(load(fileName, type: type))
+            }
+            
+            return modelObjects
+            
+            
+        }catch{
+            fatalError("could not load any files")
         }
     }
     
